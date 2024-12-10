@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .inventory-table th, .inventory-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .inventory-table th {
+            background-color: #f4f4f4;
+        }
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Inventory Tracking</h1>
+    <p>Monitor inventory levels in real-time to ensure accurate stock management.</p>
+
+    <!-- Placeholder for real-time stock updates -->
+    <table class="inventory-table">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Stock Level</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="inventory-data">
+            <!-- Dynamic rows will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Simulated real-time inventory data (in a real system, this data would come from an API or WebSocket)
+        const inventory = [
+            { id: 101, name: "Soda", stock: 25 },
+            { id: 102, name: "Chips", stock: 5 },
+            { id: 103, name: "Detergent", stock: 5 },
+        ];
+
+        // Function to update the table dynamically
+        function updateInventoryTable() {
+            const tableBody = document.getElementById('inventory-data');
+            tableBody.innerHTML = ''; // Clear previous data
+
+            inventory.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.stock}</td>
+                    <td class="status">${item.stock > 0 ? 'In Stock' : 'Out of Stock'}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Simulate real-time updates
+        setInterval(() => {
+            // Example: Decrement stock of a random item
+            const randomIndex = Math.floor(Math.random() * inventory.length);
+            if (inventory[randomIndex].stock > 0) {
+                inventory[randomIndex].stock--;
+            }
+            updateInventoryTable();
+        }, 3000); // Update every 3 seconds
+
+        // Initial table population
+        updateInventoryTable();
+    </script>
+</body>
+</html>

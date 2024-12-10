@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="OrderProducts.css">
+</head>
+<body>
+  <header>
+    <h1>Inventory Management System</h1>
+    <nav>
+      <a href="inventoryhomepage.html" id="home-link">Home</a>
+      <a href="#" id="cart-link">Cart</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section id="product-list">
+      <h2>Available Products</h2>
+      <div class="product" data-name="Coca-Cola" data-price="1.50">
+        <img src="OIP (2).jpg" height="275" width="275" alt="Coca-Cola">
+        <h3>Coca-Cola</h3>
+        <p>$1.50</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Campbell Soups" data-price="2.00">
+        <img src="GUEST_450313e3-9315-4134-843f-1a199f672485.avif" height="275" width="275" alt="Campbell Soups">
+        <h3>Campbell Soups</h3>
+        <p>$2.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Washing Detergent" data-price="5.00">
+        <img src="OIP (3).jpg" height="275" width="275" alt="Washing Detergent">
+        <h3>Washing Detergent</h3>
+        <p>$5.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Cheetos" data-price="2.50">
+        <img src="Cheetos.webp" height="275" width="275" alt="Cheetos">
+        <h3>Cheetos</h3>
+        <p>$2.50</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Thank you for shopping with us!</p>
+  </footer>
+
+  <div id="cart-section" style="display: none;">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total: $0.00</p>
+    <button id="checkout">Proceed to Checkout</button>
+  </div>
+
+  <div id="thank-you" style="display: none;">
+    <h2>Thank You for Your Purchase!</h2>
+    <p>You will receive an email confirmation of your order soon.</p>
+    <button id="back-to-home">Return to Homepage</button>
+  </div>
+
+  <script src="OrderProducts.js"></script>
+</body>
+</html>
+

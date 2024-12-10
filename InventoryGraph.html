@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management - Graphs</title>
+  <link rel="stylesheet" href="InventoryGraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Inventory Management</h1>
+      <nav>
+        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+      </nav>
+    </header>
+
+    <section class="graphs">
+      <div class="graph">
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="graph">
+        <canvas id="profitsChart"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="InventoryGraph.js"></script>
+</body>
+</html>
